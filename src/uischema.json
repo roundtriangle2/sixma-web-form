@@ -9,7 +9,10 @@
           "elements": [
             {
               "type": "Control",
-              "scope": "#/properties/id"
+              "scope": "#/properties/id",
+              "options": {
+                "readonly": true
+              }
             },
             {
               "type": "Control",
@@ -141,8 +144,21 @@
             },
             {
               "type": "Control",
-              "scope": "#/properties/dateOfDeath"
+              "scope": "#/properties/deceased"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/dateOfDeath",
+              "rule": {
+                "effect": "HIDE",
+                "condition": {
+                  "scope": "#/properties/deceased",
+                  "schema": { "const": false }
+                }
+              }
+              
             }
+           
           ]
         }
       ]

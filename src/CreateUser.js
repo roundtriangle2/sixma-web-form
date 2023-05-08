@@ -11,8 +11,8 @@ import {
 
   const renderers = [...materialRenderers];
   const defaultPerson ={
-    id:"",  name:"",  lastName:"",  middleName:"",  secondLastName:"",  suffix:"",  sex:"",  ssn:"",  birthdate:[""],  visaType:"",  visaNumber:"",  birthCountry:"",  city:"",  state:"",  birthPlace:"",  dateOfDeath:"",  adfanHasBcertCpy:"",  hairColor:"",  eyeColor:"",  height:"",  weight:"",  particularMarkers:"",  mainLanguage:"",  religion:"",  needsInterpreter:"",  civilStatus:"",  secondLanguage:"",  prefix:"",  custodyType:"",  puertoRicoResident:"",  americanCitizen:"",  dfCustodian:""
-  }
+    id:"",  name:"",  lastName:"",  middleName:"",  secondLastName:"",  suffix:"",  sex:"",  ssn:"",  birthdate:"",  visaType:"",  visaNumber:"",  birthCountry:"",  city:"",  state:"",  birthPlace:"",  dateOfDeath:"",  adfanHasBcertCpy:"",  hairColor:"",  eyeColor:"",  height:"",  weight:"",  particularMarkers:"",  mainLanguage:"",  religion:"",  needsInterpreter:"",  civilStatus:"",  secondLanguage:"",  prefix:"",  custodyType:"",  puertoRicoResident:"",  americanCitizen:"",  dfCustodian:""
+  ,deceased : false}
 function CreateUser(props) {
     const [data, setData] = React.useState(defaultPerson);
     

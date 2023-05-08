@@ -34,7 +34,7 @@
     "birthPlace": { "type": "string", "title": "Lugar de nacimiento" },
     "dateOfDeath": {
       "type": "string",
-      "title": "Fecha de muerto",
+      "title": "Fecha de muerte",
       "format": "date"
     },
     "adfanHasBcertCpy": {
@@ -85,6 +85,7 @@
       "title": "Residente de Puerto Rico"
     },
     "americanCitizen": { "type": "boolean", "title": "Ciudadano Americano" },
-    "dfCustodian": { "type": "boolean", "title": "Custodio DF" }
+    "dfCustodian": { "type": "boolean", "title": "Custodio DF" },
+    "deceased" : { "type": "boolean", "title": "Fallecido" }
   }
 }

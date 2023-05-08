@@ -12,8 +12,10 @@ import {
   const renderers = [...materialRenderers];
 
 function ViewEntry(props) {
-    const [data, setData] = React.useState(props.data);
-
+    
+    const [editDdata, setEditData] = React.useState({});
+    const [originaData, setOriginaData] = React.useState({});
+    const [isEditing, setIsEditing] = React.useState(false);
     React.useEffect(() => {
     
  
@@ -24,12 +26,26 @@ function ViewEntry(props) {
           })
           .then((response) => {
             console.log(response)
-            setData(response)
+            setEditData(response)
+            setOriginaData(response)
           });
       }, []);
     
 
+      const setEditMode = () => 
+      {
 
+
+        if(isEditing)
+        {
+          setEditData(originaData) //when comming from edit mode reset dat to original data
+        }
+        
+        setIsEditing(!isEditing);
+
+
+
+      }
     
      
     return (
@@ -39,15 +55,18 @@ function ViewEntry(props) {
           <JsonForms
             schema={schema}
             uischema={uischema}
-            data={data}
+            data={isEditing? editDdata: originaData}
             renderers={renderers}
           cells={materialCells}
+          readonly={!isEditing}
             onChange={({ errors, data }) => {
               console.log(errors);
               console.log(data);
-              setData(data);
+              setEditData(data);
             }}
           />
+
+          <button onClick={() =>setEditMode()}> {isEditing ? "Descartar cambios" : "Editar"} </button>
           <button
             onClick={() => {
               fetch('http://localhost:8080/addPerson', {
@@ -55,7 +74,7 @@ function ViewEntry(props) {
                 headers: {
                   'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(data),
+                body: JSON.stringify(originaData),
               });
             }}
           >
