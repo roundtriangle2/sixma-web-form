@@ -1,0 +1,196 @@
+{
+  "type": "VerticalLayout",
+  "elements": [
+    {
+      "type": "HorizontalLayout",
+      "elements": [
+        {
+          "type": "VerticalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/id"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/prefix"
+            }
+          ]
+        },
+
+        {
+          "type": "VerticalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/name"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/lastName"
+            }
+          ]
+        },
+        {
+          "type": "VerticalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/middleName"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/secondLastName"
+            }
+          ]
+        },
+        {
+          "type": "Control",
+          "scope": "#/properties/suffix"
+        }
+      ]
+    },
+    {
+      "type": "HorizontalLayout",
+      "elements": [
+        {
+          "type": "VerticalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/sex"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/birthdate"
+            },
+
+            {
+              "type": "Control",
+              "scope": "#/properties/birthCountry"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/birthPlace"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/hairColor"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/height"
+            }
+          ]
+        },
+        {
+          "type": "VerticalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/ssn"
+            },
+
+            {
+              "type": "Control",
+              "scope": "#/properties/visaType"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/dfCustodian"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/custodyType"
+            },
+
+            {
+              "type": "Control",
+              "scope": "#/properties/eyeColor"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/weight"
+            }
+          ]
+        },
+        {
+          "type": "VerticalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/visaNumber"
+            },
+
+            {
+              "type": "Control",
+              "scope": "#/properties/state"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/city"
+            },
+
+            {
+              "type": "Control",
+              "scope": "#/properties/particularMarkers"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/adfanHasBcertCpy"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/dateOfDeath"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "HorizontalLayout",
+      "elements": [
+        {
+          "type": "VerticalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/puertoRicoResident"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/religion"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/civilStatus"
+            }
+          ]
+        },
+        {
+          "type": "VerticalLayout",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/mainLanguage"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/secondLanguage"
+            },
+
+            {
+              "type": "Control",
+              "scope": "#/properties/needsInterpreter"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "Control",
+      "scope": "#/properties/americanCitizen"
+    }
+  ]
+}

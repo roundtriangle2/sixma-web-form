@@ -1,9 +1,9 @@
-import styles from "./style.css"
+
 import React from "react";
 import PersonEntry from "./PersonEntry";
-import PersonDetails from "./PersonDetails"
+import { Paper } from "@mui/material";
 const defaultList = [{id: 0, name: "", last_name: "", middle_name: "", second_las_name: ""}]
-function ListPeople() {
+function ListPeople(props) {
 
 
   const [peopleList, setPeopleList] = React.useState(defaultList);
@@ -22,16 +22,24 @@ function ListPeople() {
 
 
 
-  
+  const viewEntry = (id) =>{
+    props.setFocusdId(id);
+    props.changeContent(2);
+
+  };
   return (
     <div className="people-list">
-      {/* {peopleList.map(person => 
-        <PersonEntry key={person.id} person={person}></PersonEntry>
-        
-        
-        )} */}
+      <button onClick={() => props.changeContent(3)}>Create user</button>
+      {peopleList.map(person => 
+        <Paper>
 
-        <PersonDetails></PersonDetails>
+          
+        <PersonEntry key={person.id} person={person} chanteToView={() =>{viewEntry(person.id)}}></PersonEntry ></Paper>
+        
+        
+        )}
+
+        {/* <PersonDetails></PersonDetails> */}
 
 
 

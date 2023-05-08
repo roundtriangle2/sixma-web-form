@@ -10,26 +10,11 @@ import {
   } from '@jsonforms/material-renderers';
 
   const renderers = [...materialRenderers];
-
-function ViewEntry(props) {
-    const [data, setData] = React.useState(props.data);
-
-    React.useEffect(() => {
-    
- 
-        fetch("http://localhost:8080/person/" + props.focusedId)
-          .then((response) => {
-            
-            return response.json();
-          })
-          .then((response) => {
-            console.log(response)
-            setData(response)
-          });
-      }, []);
-    
-
-
+  const defaultPerson ={
+    id:"",  name:"",  lastName:"",  middleName:"",  secondLastName:"",  suffix:"",  sex:"",  ssn:"",  birthdate:[""],  visaType:"",  visaNumber:"",  birthCountry:"",  city:"",  state:"",  birthPlace:"",  dateOfDeath:"",  adfanHasBcertCpy:"",  hairColor:"",  eyeColor:"",  height:"",  weight:"",  particularMarkers:"",  mainLanguage:"",  religion:"",  needsInterpreter:"",  civilStatus:"",  secondLanguage:"",  prefix:"",  custodyType:"",  puertoRicoResident:"",  americanCitizen:"",  dfCustodian:""
+  }
+function CreateUser(props) {
+    const [data, setData] = React.useState(defaultPerson);
     
      
     return (
@@ -68,4 +53,4 @@ function ViewEntry(props) {
     
   }
 
-  export default ViewEntry;
+  export default CreateUser;

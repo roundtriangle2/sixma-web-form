@@ -1,0 +1,90 @@
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "string", "title": "id" },
+    "name": { "type": "string", "title": "Nombre", "minlength": "2" },
+    "lastName": { "type": "string", "title": "Apellido" },
+    "middleName": { "type": "string", "title": "Segundo nombre" },
+    "secondLastName": { "type": "string", "title": "Segundo Apellido" },
+    "suffix": { "type": "string", "title": "Sufijo", "enum": ["MS"] },
+    "sex": {
+      "type": "string",
+      "title": "Sexo",
+      "enum": ["Masculino", "Femenino"]
+    },
+    "ssn": { "type": "integer", "title": "SSN" },
+    "birthdate": {
+      "type": "string",
+      "title": "Fecha de nacimiento",
+      "format": "date"
+    },
+    "visaType": {
+      "type": "string",
+      "title": "Tipo de viswa",
+      "enum": ["Ninguna", "H1B"]
+    },
+    "visaNumber": { "type": "integer", "title": "Numero de visa" },
+    "birthCountry": {
+      "type": "string",
+      "title": "Pais de nacimiento",
+      "enum": ["USA"]
+    },
+    "city": { "type": "string", "title": "Ciudad", "enum": ["San antonio"] },
+    "state": { "type": "string", "title": "Estado", "enum": ["Texas"] },
+    "birthPlace": { "type": "string", "title": "Lugar de nacimiento" },
+    "dateOfDeath": {
+      "type": "string",
+      "title": "Fecha de muerto",
+      "format": "date"
+    },
+    "adfanHasBcertCpy": {
+      "type": "boolean",
+      "title": "ADFAN tiene copia de el certificado de nacimiento"
+    },
+    "hairColor": {
+      "type": "string",
+      "title": "Color de pelo",
+      "enum": ["Negro"]
+    },
+    "eyeColor": {
+      "type": "string",
+      "title": "Color de ojos",
+      "enum": ["Negro"]
+    },
+    "height": { "type": "integer", "title": "Altura" },
+    "weight": { "type": "integer", "title": "Peso" },
+    "particularMarkers": {
+      "type": "string",
+      "title": "Marcadores particulares"
+    },
+    "mainLanguage": {
+      "type": "string",
+      "title": "Lenguage primario",
+      "enum": ["ingles"]
+    },
+    "religion": { "type": "string", "title": "Religion", "enum": ["Ninguna"] },
+    "needsInterpreter": { "type": "boolean", "title": "Necesita interprete" },
+    "civilStatus": {
+      "type": "string",
+      "title": "Estado civil",
+      "enum": ["Casadoa"]
+    },
+    "secondLanguage": {
+      "type": "string",
+      "title": "Lenguuaje secundario",
+      "enum": ["Espanol"]
+    },
+    "prefix": { "type": "string", "title": "Prefijo", "enum": ["BA"] },
+    "custodyType": {
+      "type": "string",
+      "title": "tipo de custodia",
+      "enum": ["Simple"]
+    },
+    "puertoRicoResident": {
+      "type": "boolean",
+      "title": "Residente de Puerto Rico"
+    },
+    "americanCitizen": { "type": "boolean", "title": "Ciudadano Americano" },
+    "dfCustodian": { "type": "boolean", "title": "Custodio DF" }
+  }
+}
