@@ -2,9 +2,9 @@
   "type": "object",
   "properties": {
     "id": { "type": "string", "title": "id" },
-    "name": { "type": "string", "title": "Nombre", "minlength": "2" },
-    "lastName": { "type": "string", "title": "Apellido" },
-    "middleName": { "type": "string", "title": "Segundo nombre" },
+    "name": { "type": "string", "title": "Nombre", "minLength": 2 },
+    "lastName": { "type": "string", "title": "Apellido" , "minLength": 2},
+    "middleName": { "type": "string", "title": "Segundo nombre"},
     "secondLastName": { "type": "string", "title": "Segundo Apellido" },
     "suffix": { "type": "string", "title": "Sufijo", "enum": ["MS"] },
     "sex": {
@@ -12,18 +12,19 @@
       "title": "Sexo",
       "enum": ["Masculino", "Femenino"]
     },
-    "ssn": { "type": "integer", "title": "SSN" },
+    "ssn": { "type": "string", "title": "SSN" ,"minLength": 9,"pattern" : "^(?!666|000|9\\d{2})\\d{3}(?!00)\\d{2}(?!0{4})\\d{4}$", "maxLength": 9},
     "birthdate": {
       "type": "string",
       "title": "Fecha de nacimiento",
       "format": "date"
+       
     },
     "visaType": {
       "type": "string",
       "title": "Tipo de viswa",
       "enum": ["Ninguna", "H1B"]
     },
-    "visaNumber": { "type": "integer", "title": "Numero de visa" },
+    "visaNumber": { "type": "string","minLength": 8, "maxLength": 8,"pattern" :"/^\\d{8}$/", "title": "Numero de visa" },
     "birthCountry": {
       "type": "string",
       "title": "Pais de nacimiento",
@@ -31,7 +32,7 @@
     },
     "city": { "type": "string", "title": "Ciudad", "enum": ["San antonio"] },
     "state": { "type": "string", "title": "Estado", "enum": ["Texas"] },
-    "birthPlace": { "type": "string", "title": "Lugar de nacimiento" },
+    "birthPlace": { "type": "string", "title": "Lugar de nacimiento","minLength": 10 },
     "dateOfDeath": {
       "type": "string",
       "title": "Fecha de muerte",
@@ -88,4 +89,5 @@
     "dfCustodian": { "type": "boolean", "title": "Custodio DF" },
     "deceased" : { "type": "boolean", "title": "Fallecido" }
   }
+  
 }

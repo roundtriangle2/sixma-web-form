@@ -59,6 +59,7 @@ function ViewEntry(props) {
             renderers={renderers}
           cells={materialCells}
           readonly={!isEditing}
+          liveValidate={true}
             onChange={({ errors, data }) => {
               console.log(errors);
               console.log(data);
@@ -69,7 +70,7 @@ function ViewEntry(props) {
           <button onClick={() =>setEditMode()}> {isEditing ? "Descartar cambios" : "Editar"} </button>
           <button
             onClick={() => {
-              fetch('http://localhost:8080/addPerson', {
+              fetch('http://localhost:8080/person/' + originaData.id, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

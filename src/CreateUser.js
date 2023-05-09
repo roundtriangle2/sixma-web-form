@@ -4,19 +4,43 @@ import React from 'react';
 import schema from "./schema"
 import uischema from './uischema.json';
 
-import {
-    materialCells,
-    materialRenderers,
-  } from '@jsonforms/material-renderers';
+
+
+
+import {materialCells,materialRenderers, } from '@jsonforms/material-renderers';
 
   const renderers = [...materialRenderers];
   const defaultPerson ={
-    id:"",  name:"",  lastName:"",  middleName:"",  secondLastName:"",  suffix:"",  sex:"",  ssn:"",  birthdate:"",  visaType:"",  visaNumber:"",  birthCountry:"",  city:"",  state:"",  birthPlace:"",  dateOfDeath:"",  adfanHasBcertCpy:"",  hairColor:"",  eyeColor:"",  height:"",  weight:"",  particularMarkers:"",  mainLanguage:"",  religion:"",  needsInterpreter:"",  civilStatus:"",  secondLanguage:"",  prefix:"",  custodyType:"",  puertoRicoResident:"",  americanCitizen:"",  dfCustodian:""
-  ,deceased : false}
-function CreateUser(props) {
-    const [data, setData] = React.useState(defaultPerson);
+    id:"",  name:"",  lastName:"",  middleName:"",  secondLastName:"",  suffix:"",  sex:"",  ssn:"",  birthdate:"",  visaType:"",  visaNumber:"",  birthCountry:"",  city:"",  state:"",  birthPlace:"",  dateOfDeath:"",  adfanHasBcertCpy:false,  hairColor:"",  eyeColor:"",  height:"",  weight:"",  particularMarkers:"ninguno",  mainLanguage:"",  religion:"",  needsInterpreter:false,  civilStatus:"",  secondLanguage:"",  prefix:"",  custodyType:"",  puertoRicoResident:false,  americanCitizen:false,  dfCustodian:false,deceased : false}
     
-     
+
+
+  
+
+  function CreateUser(props) {
+    const [data, setData] = React.useState(defaultPerson);
+    const [hasErrors, setErrorFlag]    = React.useState(true)
+
+    
+    
+    const changeErrorFlag = (count) => 
+  {
+
+
+    if(count == 0)
+    {
+      setErrorFlag(false)
+    }
+    else
+    {
+      setErrorFlag(true);
+    }
+
+  }
+ 
+   
+
+
     return (
 
         <>
@@ -28,12 +52,14 @@ function CreateUser(props) {
             renderers={renderers}
           cells={materialCells}
             onChange={({ errors, data }) => {
-              console.log(errors);
+              changeErrorFlag(errors.length)
+              console.log(errors.length);
               console.log(data);
               setData(data);
             }}
           />
           <button
+          disabled={hasErrors}
             onClick={() => {
               fetch('http://localhost:8080/addPerson', {
                 method: 'POST',
