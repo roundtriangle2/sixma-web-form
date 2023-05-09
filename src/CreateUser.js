@@ -53,7 +53,7 @@ import {materialCells,materialRenderers, } from '@jsonforms/material-renderers';
           cells={materialCells}
             onChange={({ errors, data }) => {
               changeErrorFlag(errors.length)
-              console.log(errors.length);
+              console.log(errors);
               console.log(data);
               setData(data);
             }}

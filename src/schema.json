@@ -1,5 +1,10 @@
 {
   "type": "object",
+
+  
+  
+ 
+
   "properties": {
     "id": { "type": "string", "title": "id" },
     "name": { "type": "string", "title": "Nombre", "minLength": 2 },
@@ -24,7 +29,7 @@
       "title": "Tipo de viswa",
       "enum": ["Ninguna", "H1B"]
     },
-    "visaNumber": { "type": "string","minLength": 8, "maxLength": 8,"pattern" :"/^\\d{8}$/", "title": "Numero de visa" },
+    "visaNumber": { "type": "string","minLength": 8, "maxLength": 8,"pattern" :"^\\d{8}$", "title": "Numero de visa" },
     "birthCountry": {
       "type": "string",
       "title": "Pais de nacimiento",
@@ -85,9 +90,34 @@
       "type": "boolean",
       "title": "Residente de Puerto Rico"
     },
+
+
+
     "americanCitizen": { "type": "boolean", "title": "Ciudadano Americano" },
     "dfCustodian": { "type": "boolean", "title": "Custodio DF" },
     "deceased" : { "type": "boolean", "title": "Fallecido" }
-  }
+
+   
+  },
+  "oneOf" : [
+    {
+      "properties": {
+        "deceased": { "const": false }
+      },
+      "required": ["deceased"]
+      
+    },
+    {
+      "properties": {
+        "deceased": { "const": true },
+        "dateOfDeath": { "type": "string" },
+        "count": { "type": "number" }
+      },
+      "required": [ "deceased", "dateOfDeath"]
+      
+    }
+  ]
+   
+ 
   
 }

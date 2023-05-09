@@ -150,7 +150,7 @@
               "type": "Control",
               "scope": "#/properties/dateOfDeath",
               "rule": {
-                "effect": "HIDE",
+                "effect": "HIDDEN",
                 "condition": {
                   "scope": "#/properties/deceased",
                   "schema": { "const": false }
