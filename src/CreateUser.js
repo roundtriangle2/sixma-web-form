@@ -11,7 +11,7 @@ import {materialCells,materialRenderers, } from '@jsonforms/material-renderers';
 
   const renderers = [...materialRenderers];
   const defaultPerson ={
-    id:"",  name:"",  lastName:"",  middleName:"",  secondLastName:"",  suffix:"",  sex:"",  ssn:"",  birthdate:"",  visaType:"",  visaNumber:"",  birthCountry:"",  city:"",  state:"",  birthPlace:"",  dateOfDeath:"",  adfanHasBcertCpy:false,  hairColor:"",  eyeColor:"",  height:"",  weight:"",  particularMarkers:"ninguno",  mainLanguage:"",  religion:"",  needsInterpreter:false,  civilStatus:"",  secondLanguage:"",  prefix:"",  custodyType:"",  puertoRicoResident:false,  americanCitizen:false,  dfCustodian:false,deceased : false}
+    id:"",  name:"",  lastName:"",  middleName:"",  secondLastName:"",  suffix:"",  sex:"",  ssn:"",  birthdate:"",  visaType:"",  visaNumber:"",  birthCountry:"",  city:"",  state:"",  birthPlace:"",  dateOfDeath:undefined,  adfanHasBcertCpy:false,  hairColor:"",  eyeColor:"",  height:"",  weight:"",  particularMarkers:"ninguno",  mainLanguage:"",  religion:"",  needsInterpreter:false,  civilStatus:"",  secondLanguage:"",  prefix:"",  custodyType:"",  puertoRicoResident:false,  americanCitizen:false,  dfCustodian:false,deceased : false}
     
 
 

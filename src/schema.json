@@ -110,8 +110,8 @@
     {
       "properties": {
         "deceased": { "const": true },
-        "dateOfDeath": { "type": "string" },
-        "count": { "type": "number" }
+        "dateOfDeath": { "type": "string" }
+        
       },
       "required": [ "deceased", "dateOfDeath"]
       
