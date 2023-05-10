@@ -1,0 +1,45 @@
+.buttonContainer{
+    position: absolute;
+    left: 50%;
+    
+
+}
+
+
+html 
+{
+    background-color: #e7e9eb
+}
+
+
+ul
+{
+  
+    list-style-type: none;    
+}
+
+.entry:hover{
+
+    cursor: pointer;
+}
+
+.formButtonContainer 
+{
+    margin-top: 2%;
+}
+
+
+.entry
+{
+   
+   padding-top: 1%;
+   padding-bottom: 1%;
+   color: #04aa6d;
+   
+   
+}
+.listContainer
+{
+    margin-right: 50%;
+    padding-top: 5%;
+}

@@ -4,20 +4,20 @@
   
   
  
-
+ 
   "properties": {
     "id": { "type": "string", "title": "id" },
     "name": { "type": "string", "title": "Nombre", "minLength": 2 },
     "lastName": { "type": "string", "title": "Apellido" , "minLength": 2},
     "middleName": { "type": "string", "title": "Segundo nombre"},
     "secondLastName": { "type": "string", "title": "Segundo Apellido" },
-    "suffix": { "type": "string", "title": "Sufijo", "enum": ["MS"] },
+    "suffix": { "type": "string", "title": "Sufijo", "enum": ["Ninguno","BS","MS","Phd"] },
     "sex": {
       "type": "string",
       "title": "Sexo",
       "enum": ["Masculino", "Femenino"]
     },
-    "ssn": { "type": "string", "title": "SSN" ,"minLength": 9,"pattern" : "^(?!666|000|9\\d{2})\\d{3}(?!00)\\d{2}(?!0{4})\\d{4}$", "maxLength": 9},
+    "ssn": { "type": "string", "title": "SSN" ,"minLength": 9,"pattern" : "^(?!666|000|9\\d{2})\\d{3}(?!00)\\d{2}(?!0{4})\\d{4}$", "maxLength": 9,"errorMessage": {"pattern" : "Seguro social invalido"}},
     "birthdate": {
       "type": "string",
       "title": "Fecha de nacimiento",
@@ -35,8 +35,8 @@
       "title": "Pais de nacimiento",
       "enum": ["USA"]
     },
-    "city": { "type": "string", "title": "Ciudad", "enum": ["San antonio"] },
-    "state": { "type": "string", "title": "Estado", "enum": ["Texas"] },
+    "city": { "type": "string", "title": "Ciudad","minLength": 3 },
+    "state": { "type": "string", "title": "Estado", "enum": [""] },
     "birthPlace": { "type": "string", "title": "Lugar de nacimiento","minLength": 10 },
     "dateOfDeath": {
       "type": "string",
@@ -50,15 +50,15 @@
     "hairColor": {
       "type": "string",
       "title": "Color de pelo",
-      "enum": ["Negro"]
+      "enum": ["Negro", "Castaño", "Rubio" ,"Pelirrojo","Artificial"]
     },
     "eyeColor": {
       "type": "string",
       "title": "Color de ojos",
-      "enum": ["Negro"]
+      "enum": ["Negro", "Verdes", "Azules", "Gris", "Marrones","Heterocromía"]
     },
-    "height": { "type": "integer", "title": "Altura" },
-    "weight": { "type": "integer", "title": "Peso" },
+    "height": { "type": "integer", "title": "Altura (cm)" , "minimum" : 1, "maximum" : 500},
+    "weight": { "type": "integer", "title": "Peso (kg)", "minimum" : 1, "maximum" : 10000 },
     "particularMarkers": {
       "type": "string",
       "title": "Marcadores particulares"
@@ -66,7 +66,7 @@
     "mainLanguage": {
       "type": "string",
       "title": "Lenguage primario",
-      "enum": ["ingles"]
+      "enum": ["Ingles", "Español "]
     },
     "religion": { "type": "string", "title": "Religion", "enum": ["Ninguna"] },
     "needsInterpreter": { "type": "boolean", "title": "Necesita interprete" },
@@ -78,9 +78,9 @@
     "secondLanguage": {
       "type": "string",
       "title": "Lenguuaje secundario",
-      "enum": ["Espanol"]
+      "enum": ["Ingles", "Español "]
     },
-    "prefix": { "type": "string", "title": "Prefijo", "enum": ["BA"] },
+    "prefix": { "type": "string", "title": "Prefijo", "enum": ["Sr", "Sra."] },
     "custodyType": {
       "type": "string",
       "title": "tipo de custodia",
@@ -117,6 +117,8 @@
       
     }
   ]
+  
+
    
  
   

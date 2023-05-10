@@ -10,9 +10,19 @@
             {
               "type": "Control",
               "scope": "#/properties/id",
+
+              "rule": {
+                "effect": "HIDE",
+                "condition": {
+                  "scope": "#/properties/id",
+                  "schema": { "const": "" }
+                }
+              },
+
               "options": {
                 "readonly": true
               }
+              
             },
             {
               "type": "Control",
@@ -122,16 +132,31 @@
           "elements": [
             {
               "type": "Control",
-              "scope": "#/properties/visaNumber"
+              "scope": "#/properties/visaNumber",
+              "rule": {
+                "effect": "HIDE",
+                "condition": {
+                  "scope": "#/properties/visaType",
+                  "schema": { "const": "Ninguna" }
+                }
+              }
             },
 
             {
               "type": "Control",
-              "scope": "#/properties/state"
+              "scope": "#/properties/state",
+              "rule": {
+                "effect": "HIDE",
+                "condition": {
+                  "scope": "#/properties/state",
+                  "schema": { "const": "nostate" }
+                }
+              }
             },
             {
               "type": "Control",
               "scope": "#/properties/city"
+              
             },
 
             {
@@ -150,7 +175,7 @@
               "type": "Control",
               "scope": "#/properties/dateOfDeath",
               "rule": {
-                "effect": "HIDDEN",
+                "effect": "HIDE",
                 "condition": {
                   "scope": "#/properties/deceased",
                   "schema": { "const": false }
